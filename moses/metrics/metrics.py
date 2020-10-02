@@ -8,7 +8,7 @@ from .utils import compute_fragments, average_agg_tanimoto, \
     get_mol, canonic_smiles, mol_passes_filters, \
     logP, QED, SA, NP, weight
 from moses.utils import mapper
-from .utils_fcd import get_predictions, calculate_frechet_distance
+#from .utils_fcd import get_predictions, calculate_frechet_distance
 from multiprocessing import Pool
 from moses.utils import disable_rdkit_log, enable_rdkit_log
 
