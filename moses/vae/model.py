@@ -258,9 +258,10 @@ class VAE(nn.Module):
             new_x = []
             for i in range(x.size(0)):
                 new_x.append(x[i, :end_pads[i]])
-                
+            
+   
             if return_latent:
-                return [self.tensor2string(i_x) for i_x in new_x], np.array(z_0)
+                return [self.tensor2string(i_x) for i_x in new_x], z_0.cpu().numpy()
             else:
                 return [self.tensor2string(i_x) for i_x in new_x]
 
@@ -326,7 +327,7 @@ class VAE(nn.Module):
           input_batch = tuple(data.to(self.device) for data in input_batch)
           with torch.no_grad():
             z, _ = self.forward_encoder(input_batch)
-            latent_list.append(np.squeeze(np.array(z)))
+            latent_list.append(np.squeeze(np.array(z.cpu())))
 
         return latent_list, smiles
 

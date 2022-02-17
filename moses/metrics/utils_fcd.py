@@ -11,6 +11,7 @@ the preulitmate layer of the CHEMBLNET for generated samples and real world
 samples respectivly.
 '''
 
+'''
 import os
 import keras.backend as K
 import numpy as np
@@ -200,3 +201,5 @@ def get_predictions(smiles, gpu=-1, batch_size=128):
     else:
         os.environ.pop("CUDA_DEVICE_ORDER") 
     return smiles_act
+
+'''
